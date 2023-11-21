@@ -11,7 +11,7 @@ const MobileVerification = ({navigation}) => {
     const phoneInput = useRef()
 
     return (
-        <SafeAreaView style={{ flex: 1, backgroundColor: 'white', alignItems: 'center' }}>
+        <SafeAreaView style={{ backgroundColor: 'white', alignItems: 'center' }}>
             <StatusBar
                 background='white'
                 backgroundColor='white'
@@ -21,7 +21,7 @@ const MobileVerification = ({navigation}) => {
 
 
 
-            <View style={{ flexDirection: 'row', alignItems: 'center', width: '100%', justifyContent: 'center', marginTop: 8 }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center', width: '100%', justifyContent: 'center', marginTop: 48 }}>
 
                 <Text
                     style={{
@@ -37,7 +37,7 @@ const MobileVerification = ({navigation}) => {
             </View>
 
 
-            <View style={{ marginTop: '55%', paddingHorizontal: 16, justifyContent: 'center', alignItems: 'center', width: '95%' }}>
+            <View style={{ paddingHorizontal: 16, justifyContent: 'center', alignItems: 'center', width: '95%' }}>
                 <Text
                     style={{
                         textAlign: 'center',

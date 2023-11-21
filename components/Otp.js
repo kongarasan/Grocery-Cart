@@ -14,7 +14,7 @@ const Otp = ({navigation}) => {
             ></StatusBar>
 
 
-            <View style={{ marginTop: '55%', paddingHorizontal: 16, justifyContent: 'center', alignItems: 'center', width: '95%' }}>
+            <View style={{ marginTop: '15%', paddingHorizontal: 16, justifyContent: 'center', alignItems: 'center', width: '95%' }}>
                 <Text
                     style={{
                         textAlign: 'center',
@@ -30,7 +30,7 @@ const Otp = ({navigation}) => {
                 <OTPInputView
                     style={{ width: '80%', height: 100 }}
                     pinCount={4}
-                    autoFocusOnLoad
+                    autoFocusOnLoad = {false}
                     codeInputFieldStyle={{
                         width: 54,
                         height: 54,
@@ -41,7 +41,7 @@ const Otp = ({navigation}) => {
                     }}
                     codeInputHighlightStyle={{ borderColor: 'blue' }}
                     onCodeFilled={(code => {
-                        navigation.navigate("Signup")
+                        navigation.navigate("Home")
 
                     })}
                 />
@@ -59,6 +59,7 @@ const Otp = ({navigation}) => {
                 </Text>
                 <TouchableOpacity style={{ marginHorizontal: 26, height: 54, width: 335, marginTop: 20, backgroundColor: "#4CAD73", borderRadius: 10, alignItem: 'center', justifyContent: 'center', borderWidth: 1, borderColor: "#F5F5F5" }}
                     onPress={() => {
+                        navigation.navigate("Home")
 
                     }}>
                     <Text style={{ textAlign: 'center', fontSize: 18, color: "#FFF" }}>Verify Now</Text>

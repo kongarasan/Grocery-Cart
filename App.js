@@ -5,6 +5,8 @@ import Signup from './components/Signup';
 import Landing from './components/Landing';
 import MobileVerification from './components/MobileVerification';
 import Otp from './components/Otp';
+import Home from './components/Home';
+import { Platform } from 'react-native';
 
 const Stack = createNativeStackNavigator();
 
@@ -25,11 +27,12 @@ const App = () => {
       }}
 
         initialRouteName="Landing">
-        <Stack.Screen name='Landing' options={{ animation: 'fade', animationTypeForReplace:'fade', gestureEnabled: false}} component={Landing} />
-        <Stack.Screen name='Signup'  options={{ animation: 'fade', animationTypeForReplace:'fade', gestureEnabled: false}} component={Signup} />
-        <Stack.Screen name='Login'  options={{ animation: 'fade', animationTypeForReplace:'fade', gestureEnabled: false  }} component={Login} />
-        <Stack.Screen name='MobileVerification'  options={{ animation: 'fade', animationTypeForReplace:'fade'  }} component={MobileVerification} />
-        <Stack.Screen name='Otp'  options={{ animation: 'fade', animationTypeForReplace:'fade'  }} component={Otp} />
+        <Stack.Screen name='Landing' component={Landing} />
+        <Stack.Screen name='Signup'   component={Signup} />
+        <Stack.Screen name='Login'  component={Login} />
+        <Stack.Screen name='MobileVerification'   component={MobileVerification} />
+        <Stack.Screen name='Home'   component={Home} />
+        <Stack.Screen name='Otp'  component={Otp} />
       </Stack.Navigator>
     </NavigationContainer>
   )

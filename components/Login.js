@@ -14,8 +14,8 @@ const Login = ({ navigation }) => {
 
 
     return (
-        <ScrollView automaticallyAdjustKeyboardInsets={true}>
-        <View style={{ backgroundColor: 'white', minHeight: "100%" }}>
+        <ScrollView automaticallyAdjustKeyboardInsets={true} contentContainerStyle={{minHeight:'100%'}}>
+        <View style={{ backgroundColor: 'white', minHeight:'100%' }}>
             <View style={{ height: 400, width: "130%", backgroundColor: "#53B97C", borderBottomLeftRadius: 400, borderBottomRightRadius: 400, position: 'absolute', right: -20, flexDirection: 'column-reverse' }}>
                 <Text style={{ textAlign: 'center', fontSize: 34, color: "#FFF", zIndex: 20, marginBottom: 60, marginRight: 200 }}>Login</Text>
             </View>
@@ -62,15 +62,22 @@ const Login = ({ navigation }) => {
 
 
             <Text style={{ textAlign: 'right', color: "#0EB177", fontSize: 10, marginTop: 6, marginRight: 28 }}>Forgot Password</Text>
-            <TouchableOpacity style={{ marginHorizontal: 26, height: 54, width: 335, marginTop: 20, backgroundColor: "#4CAD73", borderRadius: 10, alignItem: 'center', justifyContent: 'center', borderWidth: 1, borderColor: "#F5F5F5" }}
+            <TouchableOpacity style={{ marginHorizontal: 26, height: 54, width: 335, marginTop: 10, backgroundColor: "#4CAD73", borderRadius: 10, alignItem: 'center', justifyContent: 'center', borderWidth: 1, borderColor: "#F5F5F5" }}
             onPress={() => {
-            navigation.navigate("MobileVerification")
+            navigation.navigate("Home")
 
           }}>
                 <Text style={{ textAlign: 'center', fontSize: 18, color: "#FFF" }}>Login</Text>
             </TouchableOpacity>
+        
+            <TouchableOpacity style={{ marginHorizontal: 26, height: 54, width: 335, marginTop: 10, backgroundColor: "#4CAD73", borderRadius: 10, alignItem: 'center', justifyContent: 'center', borderWidth: 1, borderColor: "#F5F5F5" }}
+            onPress={() => {
+            navigation.navigate("MobileVerification")
 
-            <View style={{ flexDirection: 'row', marginTop: 25, alignItem: 'center', justifyContent: 'center' }}>
+          }}>
+                <Text style={{ textAlign: 'center', fontSize: 18, color: "#FFF" }}>Via Phone Number</Text>
+            </TouchableOpacity>
+            <View style={{ flexDirection: 'row', marginTop: 10, alignItem: 'center', justifyContent: 'center' }}>
                 <Text style={{ color: "#4CAD73", fontSize: 12 }}>Not have an account?</Text>
                 <TouchableOpacity>
                     <Text style={{ color: "#4CAD73", fontSize: 12, fontWeight: 600 }}> Register</Text>
