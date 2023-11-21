@@ -3,7 +3,10 @@ import { Text, View, TouchableOpacity, SafeAreaView } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import OTPInputView from "@twotalltotems/react-native-otp-input";
 import { StatusBar } from "expo-status-bar";
-const Otp = ({navigation}) => {
+import Toast from 'react-native-toast-message'
+
+
+const Otp = ({ navigation }) => {
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: 'white', alignItems: 'center' }}>
             <StatusBar
@@ -30,18 +33,26 @@ const Otp = ({navigation}) => {
                 <OTPInputView
                     style={{ width: '80%', height: 100 }}
                     pinCount={4}
-                    autoFocusOnLoad = {false}
+                    autoFocusOnLoad={false}
                     codeInputFieldStyle={{
                         width: 54,
                         height: 54,
                         borderWidth: 1,
                         borderRadius: 12,
                         backgroundColor: '#e5e5e5',
-                        color:'black'
+                        color: 'black'
                     }}
                     codeInputHighlightStyle={{ borderColor: 'blue' }}
                     onCodeFilled={(code => {
-                        navigation.navigate("Home")
+                        if (code === "0000") {
+                            navigation.navigate("Home")
+                        } else {
+                            Toast.show({
+                                type: 'error',
+                                text1: 'Wrong OTP'
+                            });
+
+                        }
 
                     })}
                 />
@@ -65,6 +76,10 @@ const Otp = ({navigation}) => {
                     <Text style={{ textAlign: 'center', fontSize: 18, color: "#FFF" }}>Verify Now</Text>
                 </TouchableOpacity>
             </View>
+            <Toast
+                position='bottom'
+                bottomOffset={20}
+            />
 
         </SafeAreaView>
     );
