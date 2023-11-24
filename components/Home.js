@@ -9,7 +9,7 @@ import Listcards from "../UI components/Listcards";
 import { FontAwesome } from '@expo/vector-icons';
 import { useState, useEffect } from "react";
 import { StatusBar } from "expo-status-bar";
-const Home = () => {
+const Home = ({navigation}) => {
 	const [text,setText] = useState("")
 
 	const data = [
@@ -160,7 +160,11 @@ const Home = () => {
                     defaultValue={text}></TextInput>
 				 <FontAwesome name="search" size={24} color="black" style={{position:'absolute',right:10}}/>
             </View>
-			<TouchableOpacity style={{marginLeft:14,marginTop:4}}>
+			<TouchableOpacity style={{marginLeft:14,marginTop:4}}
+			 onPress={() => {
+            navigation.navigate("Cart")
+
+          }}>
 			<Entypo name="shopping-cart" size={24} color="black" />
 			</TouchableOpacity>
 			</View>

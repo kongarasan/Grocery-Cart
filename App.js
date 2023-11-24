@@ -6,6 +6,7 @@ import Landing from './components/Landing';
 import MobileVerification from './components/MobileVerification';
 import Otp from './components/Otp';
 import Home from './components/Home';
+import Cart from './components/Cart';
 import { Platform } from 'react-native';
 
 const Stack = createNativeStackNavigator();
@@ -33,6 +34,7 @@ const App = () => {
         <Stack.Screen name='MobileVerification'   component={MobileVerification} />
         <Stack.Screen name='Home'   component={Home} />
         <Stack.Screen name='Otp'  component={Otp} />
+        <Stack.Screen name='Cart'  component={Cart} />
       </Stack.Navigator>
     </NavigationContainer>
   )
