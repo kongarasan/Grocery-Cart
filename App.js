@@ -8,6 +8,7 @@ import Otp from './components/Otp';
 import Home from './components/Home';
 import Cart from './components/Cart';
 import { Platform } from 'react-native';
+import InitialPage from './components/InitialPage';
 
 const Stack = createNativeStackNavigator();
 
@@ -27,8 +28,9 @@ const App = () => {
         headerShown: false,
       }}
 
-        initialRouteName="Landing">
+        initialRouteName="InitialPage">
         <Stack.Screen name='Landing' component={Landing} />
+        <Stack.Screen name='InitialPage' component={InitialPage}/>
         <Stack.Screen name='Signup'   component={Signup} />
         <Stack.Screen name='Login'  component={Login} />
         <Stack.Screen name='MobileVerification'   component={MobileVerification} />

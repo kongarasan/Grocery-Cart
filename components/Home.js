@@ -152,7 +152,7 @@ const Home = ({navigation}) => {
 	return (
 		<SafeAreaView style={{minHeight:'100%'}}>
 		<StatusBar style="dark"/>
-		<View style={{flexDirection:'row',alignItems:'center',justifyContent:'center', marginTop:50}}>
+		<View style={{flexDirection:'row',alignItems:'center',justifyContent:'center', marginTop:10}}>
 		<View style={{  width: 300, marginTop: 10, backgroundColor: "#F5F5F5", borderRadius: 10, alignSelf: 'center', justifyContent: 'center', borderWidth: 1, borderColor: "black" }}>
                 <TextInput style={{ fontSize: 16, color: "#B9B9B9", paddingHorizontal: 10, height: 40, }}
                     placeholder="Search Item"
