@@ -6,7 +6,7 @@ import { Ionicons, AntDesign, Entypo } from '@expo/vector-icons';
 import { ScrollView } from 'react-native-gesture-handler';
 
 const popAction = StackActions.pop(1);
-const Login = ({ navigation }) => {
+const Login = ({ navigation, route }) => {
     const [text, setText] = useState('');
     const [Password, setPassword] = useState('');
     const [passIcon, setPassIcon] = useState(false)
@@ -64,7 +64,8 @@ const Login = ({ navigation }) => {
             <Text style={{ textAlign: 'right', color: "#0EB177", fontSize: 10, marginTop: 6, marginRight: 28 }}>Forgot Password</Text>
             <TouchableOpacity style={{ marginHorizontal: 26, height: 54, width: 335, marginTop: 10, backgroundColor: "#4CAD73", borderRadius: 10, alignItem: 'center', justifyContent: 'center', borderWidth: 1, borderColor: "#F5F5F5" }}
             onPress={() => {
-            navigation.navigate("Home")
+                route.params.login()
+            // navigation.navigate("Home")
 
           }}>
                 <Text style={{ textAlign: 'center', fontSize: 18, color: "#FFF" }}>Login</Text>

@@ -9,6 +9,8 @@ import Listcards from "../UI components/Listcards";
 import { FontAwesome } from '@expo/vector-icons';
 import { useState, useEffect } from "react";
 import { StatusBar } from "expo-status-bar";
+
+import { Feather } from '@expo/vector-icons';
 const Home = ({navigation}) => {
 	const [text,setText] = useState("")
 
@@ -152,28 +154,30 @@ const Home = ({navigation}) => {
 	return (
 		<SafeAreaView style={{minHeight:'100%'}}>
 		<StatusBar style="dark"/>
-		<View style={{flexDirection:'row',alignItems:'center',justifyContent:'center', marginTop:10}}>
-		<View style={{  width: 300, marginTop: 10, backgroundColor: "#F5F5F5", borderRadius: 10, alignSelf: 'center', justifyContent: 'center', borderWidth: 1, borderColor: "black" }}>
-                <TextInput style={{ fontSize: 16, color: "#B9B9B9", paddingHorizontal: 10, height: 40, }}
-                    placeholder="Search Item"
+		<View style={{ height: 350, width: "130%", backgroundColor: "#53B97C", borderBottomLeftRadius: 400, borderBottomRightRadius: 400, position: 'absolute', right: -20 }}></View>
+		<View style={{ flexDirection: 'row', marginTop: 10 ,justifyContent:'center'}}>
+        <Text style={{ textAlign: 'center', fontSize: 18, color: "#E5E5E5" }}>Kangsayur</Text>
+        <Image style={{ height: 18, width: 16, marginLeft: 5 }} source={require('../assets/carrot.png')}></Image>
+      </View>
+	  <View style={{flexDirection:'row'}}>
+		<View style={{  width: 280,height:36, marginTop: 12, marginHorizontal:15,backgroundColor: "#F5F5F5", borderRadius: 10, alignSelf: 'center', justifyContent: 'center'}}>
+		<FontAwesome name="search" size={24} color="#BDBDBD" style={{position:'absolute',left:10}}/>
+                <TextInput style={{ fontSize: 16, color: "#B9B9B9", paddingHorizontal: 40, height: 40, }}
+                    placeholder="Search for fruits, vegetables, groce..."
                     onChangeText={Text => setText(Text)}
                     defaultValue={text}></TextInput>
-				 <FontAwesome name="search" size={24} color="black" style={{position:'absolute',right:10}}/>
+				 
             </View>
-			<TouchableOpacity style={{marginLeft:14,marginTop:4}}
-			 onPress={() => {
-            navigation.navigate("Cart")
-
-          }}>
-			<Entypo name="shopping-cart" size={24} color="black" />
-			</TouchableOpacity>
+			<TouchableOpacity><Feather name="mail" size={24} color="#FFF" style={{marginTop:16}} /></TouchableOpacity>
+			<TouchableOpacity><FontAwesome name="bell-o" size={24} color="#FFF" style={{marginTop:16,marginHorizontal:15}} /></TouchableOpacity>
 			</View>
+			
 
-			<FlatList style={{marginTop:20}}
+			{/* <FlatList style={{marginTop:20}}
 				data={state}
 				renderItem={({ item, index }) => (
 					<Listcards item={item}/>
-				)} />
+				)} /> */}
 
 		</SafeAreaView>
 

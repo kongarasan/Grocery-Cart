@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import { createNativeStackNavigator, CardStyleInterpolators } from '@react-navigation/native-stack';
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import Login from './components/Login';
@@ -9,11 +10,14 @@ import Home from './components/Home';
 import Cart from './components/Cart';
 import { Platform } from 'react-native';
 import InitialPage from './components/InitialPage';
+import BottomNav from './components/BottomNav';
+import { useState } from 'react';
 
 const Stack = createNativeStackNavigator();
 
 
 const App = () => {
+  const [auth, setAuth] =useState(false)
 
   const forFade = ({ current }) => ({
     cardStyle: {
@@ -22,9 +26,26 @@ const App = () => {
   });
 
 
+
+  function login(){
+
+ setAuth(true)
+  }
+  function logout(){
+    setAuth(false)
+  }
+
+
   return (
     <NavigationContainer >
-      <Stack.Navigator screenOptions={{
+   {auth == true ?   <Stack.Navigator screenOptions={{
+        headerShown: false,
+      }}
+
+        initialRouteName="BottomNav">
+        <Stack.Screen name='BottomNav' component={BottomNav}/>
+
+      </Stack.Navigator> :    <Stack.Navigator screenOptions={{
         headerShown: false,
       }}
 
@@ -32,12 +53,11 @@ const App = () => {
         <Stack.Screen name='Landing' component={Landing} />
         <Stack.Screen name='InitialPage' component={InitialPage}/>
         <Stack.Screen name='Signup'   component={Signup} />
-        <Stack.Screen name='Login'  component={Login} />
+        <Stack.Screen name='Login'  component={Login} initialParams={{login: login}} />
         <Stack.Screen name='MobileVerification'   component={MobileVerification} />
-        <Stack.Screen name='Home'   component={Home} />
-        <Stack.Screen name='Otp'  component={Otp} />
-        <Stack.Screen name='Cart'  component={Cart} />
-      </Stack.Navigator>
+        <Stack.Screen name='Otp'  component={Otp}  />
+
+      </Stack.Navigator>}
     </NavigationContainer>
   )
 }
