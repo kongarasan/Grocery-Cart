@@ -1,5 +1,6 @@
+
 import React from "react";
-import { Text, View, Image, TouchableOpacity, FlatList, SafeAreaView,TextInput } from "react-native";
+import { Text, View, Image, TouchableOpacity, FlatList, SafeAreaView,TextInput ,ScrollView} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import LottieView from 'lottie-react-native';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -8,9 +9,13 @@ import { Entypo } from '@expo/vector-icons';
 import Listcards from "../UI components/Listcards";
 import { FontAwesome } from '@expo/vector-icons';
 import { useState, useEffect } from "react";
+import Carousel from 'react-native-reanimated-carousel';
 import { StatusBar } from "expo-status-bar";
+import OfferCard from "../UI components/OfferCard";
+import DealCard from "../UI components/DealCard";
 
 import { Feather } from '@expo/vector-icons';
+import Categories from "../UI components/Categories";
 const Home = ({navigation}) => {
 	const [text,setText] = useState("")
 
@@ -152,7 +157,7 @@ const Home = ({navigation}) => {
 
 
 	return (
-		<SafeAreaView style={{minHeight:'100%'}}>
+		<SafeAreaView style={{minHeight:'100%',backgroundColor:'white'}}>
 		<StatusBar style="dark"/>
 		<View style={{ height: 350, width: "130%", backgroundColor: "#53B97C", borderBottomLeftRadius: 400, borderBottomRightRadius: 400, position: 'absolute', right: -20 }}></View>
 		<View style={{ flexDirection: 'row', marginTop: 10 ,justifyContent:'center'}}>
@@ -171,7 +176,35 @@ const Home = ({navigation}) => {
 			<TouchableOpacity><Feather name="mail" size={24} color="#FFF" style={{marginTop:16}} /></TouchableOpacity>
 			<TouchableOpacity><FontAwesome name="bell-o" size={24} color="#FFF" style={{marginTop:16,marginHorizontal:15}} /></TouchableOpacity>
 			</View>
-			
+			<Carousel
+                loop
+                width={400}
+                height={300 }
+                autoPlay={true}
+                data={[...new Array(2).keys()]}
+                scrollAnimationDuration={5000}
+                onSnapToItem={(index) => console.log('current index:', index)}
+                renderItem={({ index }) => (
+				index%2 == 0 ? (
+                 <DealCard />
+				) : <DealCard/> 
+                )}
+            />
+			<Text style={{fontSize:18,marginHorizontal:20,fontWeight:700}}>Categories</Text>
+			{/* <View style={{height:120,width:100,backgroundColor:'white',marginHorizontal:20,marginTop:20,justifyContent:'center'}}>
+			<View style={{height:75,width:74,backgroundColor:"#DCF2E5",marginHorizontal:13,marginTop:13,borderRadius:15}}>
+				<Image  style={{height:50,width:70,justifyContent:'center',marginTop:10}}source={require('../assets/veg.png')}></Image>
+			</View>
+             <Text style={{fontSize:12,textAlign:'center',marginTop:8}}>vegetables</Text>
+			</View> */}
+			<ScrollView horizontal={true}  showsHorizontalScrollIndicator={false}>
+               <Categories Image={require("../assets/veg.png")} cat="Vegetables"/>
+			   <Categories Image={require("../assets/fruits.png")} cat="Fruits"/>
+			   <Categories Image={require("../assets/meat.png")} cat="Meats"/>
+			   <Categories Image={require("../assets/drinks.png")} cat="Drinks"/>
+			   <Categories Image={require("../assets/baker.png")} cat="Bakers"/>
+
+			</ScrollView>
 
 			{/* <FlatList style={{marginTop:20}}
 				data={state}

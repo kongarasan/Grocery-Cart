@@ -12,6 +12,7 @@ import Fav from "./Fav";
 import Profile from "./Profile";
 import Home from './Home';
 
+
 const Tab = createBottomTabNavigator();
 
 
