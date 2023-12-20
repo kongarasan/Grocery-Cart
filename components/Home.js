@@ -157,7 +157,8 @@ const Home = ({navigation}) => {
 
 
 	return (
-		<SafeAreaView style={{minHeight:'100%',backgroundColor:'white'}}>
+		<ScrollView  style={{backgroundColor:'white'}}>
+				<SafeAreaView style={{minHeight:'100%',backgroundColor:'white'}}>
 		<StatusBar style="dark"/>
 		<View style={{ height: 350, width: "130%", backgroundColor: "#53B97C", borderBottomLeftRadius: 400, borderBottomRightRadius: 400, position: 'absolute', right: -20 }}></View>
 		<View style={{ flexDirection: 'row', marginTop: 10 ,justifyContent:'center'}}>
@@ -197,12 +198,31 @@ const Home = ({navigation}) => {
 			</View>
              <Text style={{fontSize:12,textAlign:'center',marginTop:8}}>vegetables</Text>
 			</View> */}
-			<ScrollView horizontal={true}  showsHorizontalScrollIndicator={false}>
+			<View style={{height:130}}>
+
+			<ScrollView horizontal={true}  showsHorizontalScrollIndicator={false} contentContainerStyle={{backgroundColor:'white'}}>
                <Categories Image={require("../assets/veg.png")} cat="Vegetables"/>
 			   <Categories Image={require("../assets/fruits.png")} cat="Fruits"/>
 			   <Categories Image={require("../assets/meat.png")} cat="Meats"/>
 			   <Categories Image={require("../assets/drinks.png")} cat="Drinks"/>
 			   <Categories Image={require("../assets/baker.png")} cat="Bakers"/>
+
+			</ScrollView>
+			</View>
+
+			<View style={{ width: "100%", height: 1, backgroundColor: '#BDBDBD' }}></View>
+			<View style={{flexDirection:'row'}}>
+			<Text style={{marginTop:20,marginHorizontal:20,fontSize:18,fontWeight:600}}>Special Deal</Text>
+			<Text style={{marginTop:22,marginHorizontal:150,fontSize:13,color:"#4CAD73",fontWeight:"300"}}>See more</Text>
+			<Entypo name="chevron-right" size={20} color="#4CAD73" style={{marginTop:21,marginHorizontal:-150}} />
+
+			</View>
+
+			<ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+       <OfferCard Image={require("../assets/spl.png")}/>
+	   <OfferCard Image={require("../assets/tomatos.png")}/>
+	   <OfferCard Image={require("../assets/market.png")}/>
+
 
 			</ScrollView>
 
@@ -211,8 +231,11 @@ const Home = ({navigation}) => {
 				renderItem={({ item, index }) => (
 					<Listcards item={item}/>
 				)} /> */}
+		
 
 		</SafeAreaView>
+		</ScrollView>
+
 
 	);
 };
