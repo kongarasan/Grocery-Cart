@@ -5,6 +5,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import { useState, useEffect } from "react";
 import Carousel from 'react-native-reanimated-carousel';
 import { ScrollView } from "react-native-gesture-handler";
+import { AntDesign } from '@expo/vector-icons';
 import { StatusBar } from "expo-status-bar";
 import { Feather } from '@expo/vector-icons';
 import Listcards from "../UI components/Listcards";
@@ -12,6 +13,7 @@ import Categories from "../UI components/Categories";
 
 const Vegetables = ({navigation}) => {
     const [text,setText] = useState("")
+    const [title,setTitle] = useState("")
 
 	const data = [
 		{
@@ -154,10 +156,10 @@ return (
 		{/* <View style={{ height: 350, width: "130%", backgroundColor: "#53B97C", borderBottomLeftRadius: 400, borderBottomRightRadius: 400, position: 'absolute', right: -20 }}></View> */}
 		<View style={{ flexDirection: 'row', marginTop: 10 ,justifyContent:'center'}}>
         <Text style={{ textAlign: 'center', fontSize: 18, color: "#4CAD73" }}>Kangsayur</Text>
-        <Image style={{ height: 18, width: 16, marginLeft: 5 }} source={require('../assets/carrot.png')}></Image>
+        <Image style={{ height: 18, width: 16, marginLeft: 5 }} source={require('../assets/carrotG.png')}></Image>
       </View>
 	  <View style={{flexDirection:'row'}}>
-		<View style={{  width: 280,height:36, marginTop: 20, marginHorizontal:15,backgroundColor: "#F5F5F5", borderRadius: 10, alignSelf: 'center', justifyContent: 'center'}}>
+		<View style={{  width: 325,height:36, marginTop: 20, marginHorizontal:15,backgroundColor: "#F5F5F5", borderRadius: 10, alignSelf: 'center', justifyContent: 'center'}}>
 		<FontAwesome name="search" size={24} color="#BDBDBD" style={{position:'absolute',left:10}}/>
                 <TextInput style={{ fontSize: 16, color: "#B9B9B9", paddingHorizontal: 40, height: 40, }}
                     placeholder="Search for fruits, vegetables, groce..."
@@ -165,24 +167,46 @@ return (
                     defaultValue={text}></TextInput>
 				 
             </View>
-			<TouchableOpacity><Feather name="mail" size={24} color="black" style={{marginTop:24}} /></TouchableOpacity>
-			<TouchableOpacity><FontAwesome name="bell-o" size={24} color="black" style={{marginTop:24,marginHorizontal:15}} /></TouchableOpacity>
+			
+			<TouchableOpacity><AntDesign name="shoppingcart" size={24} color="black"  style={{marginTop:24}} /></TouchableOpacity>
 			</View>
             <View style={{height:130}}>
             <ScrollView horizontal={true}  showsHorizontalScrollIndicator={false} contentContainerStyle={{backgroundColor:'white'}}>
-               <Categories Image={require("../assets/veg.png")} cat="Vegetables" 
+               <Categories Image={require("../assets/veg.png")} cat="Vegetables" flag={title == "Vegetables"} 
 				onClick={() => {
-                        navigation.navigate("Vegetables")
+                    setTitle('Vegetables')
+                        // navigation.navigate("Vegetables")
                     }}
 			   />
-			   <Categories Image={require("../assets/fruits.png")} cat="Fruits"/>
-			   <Categories Image={require("../assets/meat.png")} cat="Meats"/>
-			   <Categories Image={require("../assets/drinks.png")} cat="Drinks"/>
-			   <Categories Image={require("../assets/baker.png")} cat="Bakers"/>
-
+			   <Categories Image={require("../assets/fruits.png")} cat="Fruits" flag={title == "Fruits"} 
+                onClick={() => {
+                    setTitle('Fruits')
+                        // navigation.navigate("Vegetables")
+                    }}
+               />
+			   <Categories Image={require("../assets/meat.png")} cat="Meats" flag={title == "Meats"} 
+                onClick={() => {
+                    setTitle('Meats')
+                        // navigation.navigate("Vegetables")
+                    }}
+               />
+			   <Categories Image={require("../assets/drinks.png")} cat="Drinks" flag={title == "Drinks"} 
+                onClick={() => {
+                    setTitle('Drinks')
+                        // navigation.navigate("Vegetables")
+                    }}
+               />
+			   <Categories Image={require("../assets/baker.png")} cat="Bakers" flag={title == "Drinks"} 
+                onClick={() => {
+                    setTitle('Bakers')
+                        // navigation.navigate("Vegetables")
+                    }}
+               />
+            
 			</ScrollView>
             </View>
-            <View style={{height:1,width:"100%",backgroundColor:'#E6E6E6'}}></View>
+            {/* <View style={{height:6,width:66,backgroundColor:"#51BC7D",marginHorizontal:18,borderTopLeftRadius:6,borderTopRightRadius:6}}></View> */}
+            <View style={{height:2,width:"100%",backgroundColor:'#E6E6E6'}}></View>
  <ScrollView showsVerticalScrollIndicator={false}>
 
             <FlatList style={{marginTop:20}}

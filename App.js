@@ -13,6 +13,7 @@ import InitialPage from './components/InitialPage';
 import BottomNav from './components/BottomNav';
 import { useState } from 'react';
 import Vegetables from './components/Vegetables';
+import Notification from './components/Notification';
 
 const Stack = createNativeStackNavigator();
 
@@ -46,6 +47,7 @@ const App = () => {
         initialRouteName="BottomNav">
         <Stack.Screen name='BottomNav' component={BottomNav}/>
         <Stack.Screen name='Vegetables' component={Vegetables}/>
+        <Stack.Screen name='Notification' component={Notification}/>
 
       </Stack.Navigator> :    <Stack.Navigator screenOptions={{
         headerShown: false,

@@ -176,7 +176,10 @@ const Home = ({navigation}) => {
 				 
             </View>
 			<TouchableOpacity><Feather name="mail" size={24} color="#FFF" style={{marginTop:16}} /></TouchableOpacity>
-			<TouchableOpacity><FontAwesome name="bell-o" size={24} color="#FFF" style={{marginTop:16,marginHorizontal:15}} /></TouchableOpacity>
+			<TouchableOpacity><FontAwesome name="bell-o" size={24} color="#FFF" style={{marginTop:16,marginHorizontal:15}}
+			onPress={()=>{
+				navigation.navigate("Notification")
+			}}/></TouchableOpacity>
 			</View>
 			<Carousel
                 loop
