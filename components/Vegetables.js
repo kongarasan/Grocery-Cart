@@ -196,7 +196,7 @@ return (
                         // navigation.navigate("Vegetables")
                     }}
                />
-			   <Categories Image={require("../assets/baker.png")} cat="Bakers" flag={title == "Drinks"} 
+			   <Categories Image={require("../assets/baker.png")} cat="Bakers" flag={title == "Bakers"} 
                 onClick={() => {
                     setTitle('Bakers')
                         // navigation.navigate("Vegetables")
