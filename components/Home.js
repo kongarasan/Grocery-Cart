@@ -13,6 +13,7 @@ import Carousel from 'react-native-reanimated-carousel';
 import { StatusBar } from "expo-status-bar";
 import OfferCard from "../UI components/OfferCard";
 import DealCard from "../UI components/DealCard";
+import List2Card from "../UI components/List2Card";
 import Vegetables from "./Vegetables";
 
 import { Feather } from '@expo/vector-icons';
@@ -182,17 +183,17 @@ const Home = ({navigation}) => {
 			}}/></TouchableOpacity>
 			</View>
 			<Carousel
-                loop
+                
                 width={400}
                 height={300 }
                 autoPlay={true}
                 data={[...new Array(2).keys()]}
-                scrollAnimationDuration={5000}
+                scrollAnimationDuration={3000}
                 onSnapToItem={(index) => console.log('current index:', index)}
                 renderItem={({ index }) => (
 				index%2 == 0 ? (
                  <DealCard />
-				) : <DealCard/> 
+				) : <List2Card/> 
                 )}
             />
 			<Text style={{fontSize:18,marginHorizontal:20,fontWeight:700}}>Categories</Text>

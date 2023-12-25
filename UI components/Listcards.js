@@ -10,7 +10,7 @@ const Listcards = ({ item }) => {
     const [liked, setLiked] = useState(false)
     const [count,setCount] =useState(0)
     return (
-        <View style={{ height: 130, width: "90%", backgroundColor: "black", marginTop: 10, marginHorizontal: 20, borderRadius: 20, flexDirection: 'row' }}>
+        <TouchableOpacity style={{ height: 130, width: "90%", marginTop: 10, marginHorizontal: 20, borderRadius: 20, flexDirection: 'row' }}>
             <TouchableOpacity 
             onPress={()=>{setLiked(!liked)}}
              style={{ position: 'absolute', top: 12, left: 12, zIndex: 4 }}>
@@ -51,7 +51,7 @@ const Listcards = ({ item }) => {
                 </View>
             </View>
 
-        </View>
+        </TouchableOpacity>
     );
 };
 

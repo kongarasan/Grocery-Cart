@@ -47,10 +47,10 @@ const Vegetables = ({navigation}) => {
 			image: require("../assets/tomato.png")
 		},
 		{
-			name: "Fresh Carrot",
+			name: "Cauliflower",
 			price: "18,000",
 			mrp: "21,000",
-			image: require("../assets/freshcarrot.png")
+			image: require("../assets/flower.jpg")
 		},
 		{
 			name: "Fresh Red Chilli",
