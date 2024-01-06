@@ -6,11 +6,11 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { useState } from "react";
-const Listcards = ({ item }) => {
+const Listcards = ({ item, onClick }) => {
     const [liked, setLiked] = useState(false)
     const [count,setCount] =useState(0)
     return (
-        <TouchableOpacity style={{ height: 130, width: "90%", marginTop: 10, marginHorizontal: 20, borderRadius: 20, flexDirection: 'row' }}>
+        <TouchableOpacity onPress={onClick} style={{ height: 130, width: "90%", marginTop: 10, marginHorizontal: 20, borderRadius: 20, flexDirection: 'row' }}>
             <TouchableOpacity 
             onPress={()=>{setLiked(!liked)}}
              style={{ position: 'absolute', top: 12, left: 12, zIndex: 4 }}>
