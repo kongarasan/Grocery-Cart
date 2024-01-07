@@ -211,10 +211,26 @@ const Home = ({navigation}) => {
                         navigation.navigate("Vegetables")
                     }}
 			   />
-			   <Categories Image={require("../assets/fruits.png")} cat="Fruits"/>
-			   <Categories Image={require("../assets/meat.png")} cat="Meats"/>
-			   <Categories Image={require("../assets/drinks.png")} cat="Drinks"/>
-			   <Categories Image={require("../assets/baker.png")} cat="Bakers"/>
+			   <Categories Image={require("../assets/fruits.png")} cat="Fruits"
+				onClick={() => {
+                        navigation.navigate("Vegetables")
+                    }}
+			   />
+			   <Categories Image={require("../assets/meat.png")} cat="Meats"
+				onClick={() => {
+                        navigation.navigate("Vegetables")
+                    }}
+			   />
+			   <Categories Image={require("../assets/drinks.png")} cat="Drinks"
+				onClick={() => {
+                        navigation.navigate("Vegetables")
+                    }}
+			   />
+			   <Categories Image={require("../assets/baker.png")} cat="Bakers"
+				onClick={() => {
+                        navigation.navigate("Vegetables")
+                    }}
+			   />
 
 			</ScrollView>
 			</View>
