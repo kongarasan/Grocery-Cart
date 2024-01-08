@@ -15,7 +15,10 @@ const DetailsPage = ({route})=>{
 
 <Text style={{fontSize:24,marginHorizontal:28,marginTop:15}}>{route.params.name}</Text>
 <Text style={{fontSize:18,marginHorizontal:28,marginTop:15,color:"#4CAD73"}}>Rs: {route.params.price}/kg</Text>
-
+<Text style={{fontSize:14,marginTop:25,marginHorizontal:44,color:"#4CAD73"}}>Description</Text>
+<View style={{height:4,width:80,backgroundColor:"#4CAD73",marginHorizontal:44,marginTop:10,borderTopLeftRadius:6,borderTopRightRadius:6}}></View>
+<View style={{width:"100%",height:2,backgroundColor:"#BDBDBD",marginTop:0}}></View>
+<Text style={{fontSize:13,marginHorizontal:28,marginTop:22,textAlign:"justify",color:"#828282"}}>{route.params.details}</Text>
     </View>
     <View style={{backgroundColor:"white",height:120,borderTopLeftRadius:50,borderTopRightRadius:50,marginTop:-44,flexDirection:'row'}}>
     <View style={{ flexDirection: 'row', marginTop: 10,marginTop:22 ,marginHorizontal:30}}>

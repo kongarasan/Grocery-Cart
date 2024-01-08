@@ -21,6 +21,7 @@ const Vegetables = ({ navigation }) => {
 			price: "100",
 			mrp: "130",
 			category: "Vegetables",
+			details: "The carrot is a root vegetable, most commonly observed as orange in color, though purple, black, red, white, and yellow cultivars exist, all of which are domesticated forms of the wild carrot, Daucus carota, native to Europe and Southwestern Asia.",
 			image: require("../assets/freshcarrot.png")
 		},
 		{
@@ -28,6 +29,7 @@ const Vegetables = ({ navigation }) => {
 			price: "250",
 			mrp: "350",
 			category: "Vegetables",
+			details:"Broccoli contains many vitamins, minerals, fiber, and antioxidants. Broccoli's benefits include helping reduce inflammation, keeping blood sugar stable, and strengthening the immune system. Broccoli is a green vegetable that vaguely resembles a miniature tree. It belongs to the plant species known as Brassica oleracea.",
 			image: require("../assets/broccoli.jpg")
 		},
 		{
@@ -35,6 +37,8 @@ const Vegetables = ({ navigation }) => {
 			price: "21,000",
 			mrp: "29,000",
 			category: "Vegetables",
+			details:"Onions are high in vitamin C, which may help regulate your immune health, collagen production, and iron absorption. It's also a powerful antioxidant that could help protect your cells from unstable, damaging molecules called free radicals. Onions are rich in B vitamins, including folate and vitamin B6.",
+			
 			image: require("../assets/onion.png")
 		},
 		{
@@ -42,6 +46,7 @@ const Vegetables = ({ navigation }) => {
 			price: "10,000",
 			mrp: "12,000",
 			category: "Vegetables",
+			details:"They're rich in vitamin C, which is an antioxidant. Potatoes were a life-saving food source in early times because the vitamin C prevented scurvy. Another major nutrient in potatoes is potassium, an electrolyte which aids in the workings of our heart, muscles, and nervous system.",
 			image: require("../assets/potato.png")
 		},
 		{
@@ -49,6 +54,7 @@ const Vegetables = ({ navigation }) => {
 			price: "10,000",
 			mrp: "12,000",
 			category: "Vegetables",
+			details:"Tomato (Lycopersicon esculentum) is an annual or short lived perennial pubescent herb and greyish green curled uneven pinnate leaves. The flowers are off white bearing fruits which are red or yellow in colour. It is a self pollinated crop.",
 			image: require("../assets/tomato.png")
 		},
 		{
